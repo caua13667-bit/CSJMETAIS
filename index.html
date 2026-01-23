@@ -1,0 +1,872 @@
+<!doctype html>
+<html lang="pt-br">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <meta name="description" content="CSJ Metais — Qualidade que flui. Metais sanitários com durabilidade, vedação eficiente e acabamento premium." />
+  <title>CSJ Metais | Qualidade que flui</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&display=swap" rel="stylesheet">
+
+  <style>
+    :root{
+      --bg:#070A10;
+      --bg2:#0B1220;
+      --card:rgba(255,255,255,.04);
+      --card2:rgba(0,0,0,.20);
+      --text:#EAF0FF;
+      --muted:rgba(234,240,255,.72);
+      --line:rgba(255,255,255,.10);
+
+      --blue:#2DA7FF;
+      --blue2:#0E6FB3;
+
+      --gold:#D7B15A;
+      --gold2:#9E7A2A;
+
+      --shadow: 0 28px 90px rgba(0,0,0,.55);
+      --radius:18px;
+    }
+
+    *{box-sizing:border-box}
+    html,body{margin:0;padding:0}
+    body{
+      font-family:Inter,system-ui,-apple-system,Segoe UI,Roboto,Arial,Helvetica,sans-serif;
+      color:var(--text);
+      background:
+        radial-gradient(1200px 650px at 15% 0%, rgba(45,167,255,.18), transparent 60%),
+        radial-gradient(1100px 600px at 85% 10%, rgba(215,177,90,.14), transparent 55%),
+        linear-gradient(180deg, var(--bg), #05060A 60%, #04050A);
+      line-height:1.55;
+      overflow-x:hidden;
+    }
+
+    a{color:inherit;text-decoration:none}
+    .container{width:min(1120px, 92vw); margin:0 auto}
+
+    /* Topbar */
+    .topbar{
+      background: rgba(7,10,16,.65);
+      backdrop-filter: blur(10px);
+      border-bottom:1px solid var(--line);
+    }
+    .topbar__inner{
+      display:flex;align-items:center;justify-content:space-between;
+      padding:10px 0;
+      font-size:13px;color:var(--muted);
+      gap:12px;
+    }
+    .topbar__left{display:flex;align-items:center;gap:10px;flex-wrap:wrap}
+    .dot{
+      width:9px;height:9px;border-radius:999px;
+      background: linear-gradient(135deg, var(--gold), rgba(215,177,90,.55));
+      box-shadow: 0 0 22px rgba(215,177,90,.25);
+    }
+    .topbar__right{display:flex;gap:14px;flex-wrap:wrap}
+    .topbar__right a{opacity:.92}
+    .topbar__right a:hover{opacity:1;color:var(--text)}
+
+    /* Header */
+    .header{
+      position:sticky;top:0;z-index:30;
+      background: rgba(7,10,16,.72);
+      backdrop-filter: blur(12px);
+      border-bottom:1px solid var(--line);
+    }
+    .header__inner{
+      display:flex;align-items:center;justify-content:space-between;
+      padding:14px 0;
+      gap:14px;
+    }
+
+    .brand{
+      display:flex;align-items:center;gap:12px;
+      min-width:220px;
+    }
+    .brand__text strong{display:block;font-size:15px;letter-spacing:.2px}
+    .brand__text span{display:block;font-size:12px;color:var(--muted);margin-top:1px}
+    .logo{
+      width:46px;height:46px;border-radius:14px;
+      border:1px solid rgba(255,255,255,.12);
+      background:
+        radial-gradient(40px 40px at 20% 10%, rgba(45,167,255,.35), transparent 60%),
+        radial-gradient(48px 48px at 85% 20%, rgba(215,177,90,.25), transparent 60%),
+        rgba(255,255,255,.03);
+      box-shadow: 0 18px 45px rgba(0,0,0,.35);
+      display:grid;place-items:center;
+      overflow:hidden;
+    }
+    .nav{
+      display:flex;gap:18px;align-items:center;flex-wrap:wrap;
+      justify-content:flex-end;
+    }
+    .nav a{
+      color:var(--muted);
+      font-weight:700;
+      font-size:14px;
+      letter-spacing:.15px;
+    }
+    .nav a:hover{color:var(--text)}
+    .hamb{
+      display:none;
+      width:44px;height:44px;border-radius:12px;
+      border:1px solid var(--line);
+      background: rgba(255,255,255,.03);
+      color:var(--text);
+    }
+    .hamb span{display:block;height:2px;background:var(--text);margin:6px 10px;border-radius:2px;opacity:.85}
+
+    /* Hero */
+    .hero{
+      position:relative;
+      padding:58px 0 10px;
+      overflow:hidden;
+    }
+    .hero__bg{
+      position:absolute;inset:0;
+      background:
+        radial-gradient(850px 460px at 18% 0%, rgba(45,167,255,.22), transparent 62%),
+        radial-gradient(900px 520px at 82% 10%, rgba(215,177,90,.18), transparent 60%);
+      pointer-events:none;
+      opacity:.95;
+    }
+    .hero__inner{
+      position:relative;
+      display:grid;
+      grid-template-columns: 1.15fr .85fr;
+      gap:26px;
+      align-items:center;
+    }
+    .eyebrow{
+      display:inline-flex;
+      align-items:center;
+      gap:10px;
+      padding:8px 12px;
+      border-radius:999px;
+      border:1px solid rgba(255,255,255,.12);
+      background: rgba(255,255,255,.03);
+      color:var(--muted);
+      font-size:13px;
+      margin:0 0 14px;
+    }
+    .eyebrow b{color:var(--gold);font-weight:800}
+    h1{
+      font-size:46px;
+      line-height:1.07;
+      margin:0 0 14px;
+      letter-spacing:-.6px;
+    }
+    .gold{color:var(--gold)}
+    .lead{
+      color:var(--muted);
+      font-size:16px;
+      margin:0 0 22px;
+      max-width:62ch;
+    }
+
+    .btns{display:flex;gap:12px;flex-wrap:wrap;margin-bottom:16px}
+    .btn{
+      display:inline-flex;align-items:center;justify-content:center;
+      gap:10px;
+      padding:12px 16px;
+      border-radius:14px;
+      border:1px solid rgba(255,255,255,.12);
+      background: rgba(255,255,255,.03);
+      color:var(--text);
+      font-weight:800;
+      cursor:pointer;
+      transition: .15s ease;
+    }
+    .btn--primary{
+      background: linear-gradient(135deg, rgba(45,167,255,.95), rgba(14,111,179,.70));
+      border-color: rgba(45,167,255,.40);
+      color:#06101a;
+    }
+    .btn--primary:hover{transform: translateY(-1px); filter:brightness(1.03)}
+    .btn--ghost:hover{background: rgba(255,255,255,.06); transform: translateY(-1px)}
+    .badges{display:flex;gap:10px;flex-wrap:wrap}
+    .badge{
+      font-size:13px;
+      color:var(--muted);
+      border:1px solid rgba(255,255,255,.12);
+      padding:8px 12px;
+      border-radius:999px;
+      background: rgba(0,0,0,.14);
+    }
+
+    /* CSJ hero card */
+    .card{
+      border-radius: calc(var(--radius) + 6px);
+      border:1px solid rgba(255,255,255,.12);
+      background:
+        radial-gradient(420px 240px at 20% 0%, rgba(45,167,255,.18), transparent 55%),
+        radial-gradient(420px 240px at 90% 20%, rgba(215,177,90,.14), transparent 55%),
+        rgba(255,255,255,.03);
+      box-shadow: var(--shadow);
+      overflow:hidden;
+    }
+    .card__head,.card__foot{padding:14px 16px;display:flex;align-items:center;justify-content:space-between}
+    .card__foot{border-top:1px solid rgba(255,255,255,.10);color:var(--muted);font-size:13px}
+    .chips{display:flex;gap:8px;flex-wrap:wrap}
+    .chip{
+      font-size:12px;
+      padding:7px 10px;
+      border-radius:999px;
+      border:1px solid rgba(255,255,255,.12);
+      background: rgba(0,0,0,.16);
+      color:var(--muted);
+      font-weight:700;
+    }
+    .chip--gold{
+      border-color: rgba(215,177,90,.25);
+      background: rgba(215,177,90,.10);
+      color: var(--text);
+    }
+
+    .card__body{padding:16px}
+    .heroVisual{
+      border-radius: var(--radius);
+      border:1px solid rgba(255,255,255,.12);
+      background:
+        linear-gradient(135deg, rgba(0,0,0,.20), rgba(255,255,255,.02));
+      overflow:hidden;
+      position:relative;
+      min-height:260px;
+      display:grid;
+      place-items:center;
+      text-align:center;
+      padding:22px;
+    }
+    .heroVisual:before{
+      content:"";
+      position:absolute; inset:-30px;
+      background:
+        radial-gradient(300px 220px at 20% 20%, rgba(45,167,255,.25), transparent 60%),
+        radial-gradient(320px 240px at 85% 30%, rgba(215,177,90,.20), transparent 62%);
+      pointer-events:none;
+      filter: blur(0px);
+    }
+    .heroVisual__inner{position:relative;z-index:1}
+    .heroVisual__inner h3{margin:0 0 6px;letter-spacing:-.2px}
+    .heroVisual__inner p{margin:0;color:var(--muted);font-size:13px;max-width:40ch}
+    .heroVisual__sig{
+      display:inline-flex;align-items:center;gap:8px;
+      margin-top:14px;
+      color:var(--muted);font-size:12px;
+      padding:8px 10px;border-radius:999px;
+      border:1px solid rgba(255,255,255,.12);
+      background: rgba(0,0,0,.14);
+    }
+    .spark{
+      width:10px;height:10px;border-radius:999px;
+      background: rgba(45,167,255,.9);
+      box-shadow: 0 0 22px rgba(45,167,255,.45);
+    }
+
+    /* Sections */
+    .section{padding:72px 0}
+    .section--alt{
+      background: linear-gradient(180deg, rgba(255,255,255,.03), rgba(255,255,255,0));
+      border-top:1px solid rgba(255,255,255,.06);
+      border-bottom:1px solid rgba(255,255,255,.06);
+    }
+    .section__head{margin-bottom:20px}
+    .section__head h2{margin:0 0 6px;font-size:34px;letter-spacing:-.4px}
+    .section__head p{margin:0;color:var(--muted)}
+
+    .grid{display:grid;gap:14px}
+    .grid--cards{grid-template-columns:repeat(3,minmax(0,1fr))}
+    .pcard{
+      border-radius: var(--radius);
+      border:1px solid rgba(255,255,255,.12);
+      background: rgba(255,255,255,.03);
+      padding:18px;
+      position:relative;
+      overflow:hidden;
+    }
+    .pcard:before{
+      content:"";
+      position:absolute; inset:-1px;
+      background:
+        radial-gradient(240px 160px at 15% 0%, rgba(45,167,255,.14), transparent 60%),
+        radial-gradient(240px 160px at 85% 20%, rgba(215,177,90,.10), transparent 60%);
+      pointer-events:none;
+      opacity:.9;
+    }
+    .pcard > *{position:relative}
+    .pcard h3{margin:0 0 6px}
+    .pcard p{margin:0 0 14px;color:var(--muted)}
+    .meta{display:flex;gap:10px;align-items:baseline}
+    .count{font-size:28px;font-weight:900;color:var(--gold)}
+    .meta span:last-child{color:var(--muted)}
+
+    .grid--features{grid-template-columns:repeat(2,minmax(0,1fr));gap:16px}
+    .feature{
+      border-radius: var(--radius);
+      border:1px solid rgba(255,255,255,.12);
+      background: rgba(0,0,0,.14);
+      padding:18px;
+    }
+    .feature h3{margin:0 0 6px}
+    .feature p{margin:0;color:var(--muted)}
+
+    /* CTA */
+    .cta{
+      border-radius: calc(var(--radius) + 8px);
+      border:1px solid rgba(255,255,255,.12);
+      background:
+        linear-gradient(135deg, rgba(45,167,255,.14), rgba(215,177,90,.10));
+      padding:20px;
+      display:grid;
+      grid-template-columns: 1.25fr .75fr;
+      gap:16px;
+    }
+    .cta__box{
+      border-radius: var(--radius);
+      border:1px solid rgba(255,255,255,.12);
+      background: rgba(0,0,0,.16);
+      padding:16px;
+    }
+    .cta__box ul{margin:10px 0 0;padding-left:18px;color:var(--muted)}
+    .small{color:var(--muted);font-size:13px;margin:10px 0 0}
+
+    /* About + Contact */
+    .about{
+      display:grid;
+      grid-template-columns: 1.1fr .9fr;
+      gap:18px;
+      align-items:start;
+    }
+    .about p{color:var(--muted)}
+    .miniGrid{display:grid;gap:12px}
+    .mini{
+      border-radius: var(--radius);
+      border:1px solid rgba(255,255,255,.12);
+      background: rgba(255,255,255,.03);
+      padding:16px;
+    }
+    .kpi{font-size:28px;font-weight:900;color:var(--gold)}
+    .label{display:block;color:var(--muted);margin-top:4px}
+
+    .contact{
+      display:grid;
+      grid-template-columns: .9fr 1.1fr;
+      gap:16px;
+    }
+    .box{
+      border-radius: var(--radius);
+      border:1px solid rgba(255,255,255,.12);
+      background: rgba(255,255,255,.03);
+      padding:18px;
+    }
+    label{display:block;margin:10px 0;color:var(--muted);font-size:13px}
+    input, textarea{
+      width:100%;
+      margin-top:6px;
+      padding:12px 12px;
+      border-radius: 12px;
+      border:1px solid rgba(255,255,255,.12);
+      background: rgba(0,0,0,.22);
+      color:var(--text);
+      outline:none;
+    }
+    input:focus, textarea:focus{border-color: rgba(45,167,255,.50)}
+
+    /* Footer */
+    footer{
+      border-top:1px solid rgba(255,255,255,.08);
+      padding:26px 0;
+      background: rgba(0,0,0,.22);
+    }
+    .footer{
+      display:grid;
+      grid-template-columns: 1fr 1fr 1fr;
+      gap:14px;
+      align-items:center;
+    }
+    .footer__links{display:flex;gap:14px;justify-content:center;color:var(--muted);flex-wrap:wrap}
+    .footer__links a:hover{color:var(--text)}
+    .footer__copy{text-align:right;color:var(--muted);font-size:13px}
+
+    /* Responsive */
+    @media (max-width: 920px){
+      h1{font-size:40px}
+      .hero__inner{grid-template-columns:1fr}
+      .grid--cards{grid-template-columns:repeat(2,minmax(0,1fr))}
+      .grid--features{grid-template-columns:1fr}
+      .cta{grid-template-columns:1fr}
+      .about{grid-template-columns:1fr}
+      .contact{grid-template-columns:1fr}
+      .footer{grid-template-columns:1fr}
+      .footer__copy{text-align:left}
+      .footer__links{justify-content:flex-start}
+    }
+    @media (max-width: 640px){
+      .nav{display:none}
+      .hamb{display:inline-block}
+      .grid--cards{grid-template-columns:1fr}
+    }
+  </style>
+</head>
+
+<body>
+  <div class="topbar">
+    <div class="container topbar__inner">
+      <div class="topbar__left">
+        <span class="dot"></span>
+        <span><strong>CSJ Metais</strong> • Ferraz de Vasconcelos, SP</span>
+      </div>
+      <div class="topbar__right">
+        <a href="#produtos">Produtos</a>
+        <a href="#catalogo">Catálogo</a>
+        <a href="#sobre">Sobre</a>
+        <a href="#contato">Contato</a>
+      </div>
+    </div>
+  </div>
+
+  <header class="header">
+    <div class="container header__inner">
+      <a class="brand" href="#">
+        <div class="logo" aria-label="Logo CSJ Metais">
+          <!-- Logo CSJ (SVG) -->
+          <svg width="38" height="38" viewBox="0 0 38 38" fill="none" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="CSJ">
+            <defs>
+              <linearGradient id="g1" x1="2" y1="2" x2="36" y2="36" gradientUnits="userSpaceOnUse">
+                <stop stop-color="#2DA7FF"/>
+                <stop offset="0.58" stop-color="#D7B15A"/>
+                <stop offset="1" stop-color="#0E6FB3"/>
+              </linearGradient>
+              <filter id="s" x="-50%" y="-50%" width="200%" height="200%">
+                <feGaussianBlur stdDeviation="0.6" result="b"/>
+                <feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge>
+              </filter>
+            </defs>
+            <path d="M19 2.4c9.16 0 16.6 7.44 16.6 16.6S28.16 35.6 19 35.6 2.4 28.16 2.4 19 9.84 2.4 19 2.4Z" stroke="url(#g1)" stroke-width="2.2" filter="url(#s)"/>
+            <path d="M12.2 22.2c1.1 2 3.2 3.2 6 3.2 2.7 0 4.7-.9 5.9-2.4.6-.7.4-1.7-.4-2.1l-1.1-.6c-.6-.3-1.3-.2-1.8.3-.7.7-1.6 1.1-2.8 1.1-1.5 0-2.6-.6-3.2-1.6-.8-1.4-.7-3.7.2-5 .6-.9 1.6-1.4 2.9-1.4 1.1 0 2 .3 2.6.9.5.5 1.2.6 1.8.3l1.2-.6c.8-.4 1-1.5.4-2.1-1.2-1.3-3.1-2-5.7-2-2.7 0-4.8 1.1-6 2.9-1.6 2.3-1.8 6.1 0 8.1Z" fill="#EAF0FF" opacity=".95"/>
+            <path d="M26.6 12.4v10.3c0 .9-.7 1.6-1.6 1.6h-1.2c-.9 0-1.6-.7-1.6-1.6v-5.6c0-.9-.7-1.6-1.6-1.6h-.2c-.9 0-1.6.7-1.6 1.6v.2c0 2.8-1.7 4.8-4.5 4.8-.8 0-1.5-.2-2.1-.5-.8-.4-1-1.4-.5-2.1l.7-1c.4-.6 1.1-.8 1.7-.5.2.1.4.1.6.1 1 0 1.6-.7 1.6-1.9v-.3c0-2.6 1.7-4.4 4.2-4.4h.5c1 0 1.8.2 2.5.6.8.4 1.6-.2 1.6-1.1v-.5c0-.9.7-1.6 1.6-1.6h.7c.9 0 1.6.7 1.6 1.6Z" fill="#D7B15A" opacity=".95"/>
+          </svg>
+        </div>
+        <div class="brand__text">
+          <strong>CSJ Metais</strong>
+          <span>Qualidade que flui</span>
+        </div>
+      </a>
+
+      <nav class="nav" aria-label="Menu principal">
+        <a href="#produtos">Produtos</a>
+        <a href="#diferenciais">Diferenciais</a>
+        <a href="#catalogo">Catálogo</a>
+        <a href="#contato">Fale conosco</a>
+      </nav>
+
+      <button class="hamb" aria-label="Abrir menu" aria-expanded="false">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </header>
+
+  <section class="hero">
+    <div class="hero__bg" aria-hidden="true"></div>
+
+    <div class="container hero__inner">
+      <div>
+        <p class="eyebrow"><b>CSJ</b> Metais Sanitários • Premium/Industrial</p>
+        <h1>Metais que entregam <span class="gold">confiança</span>, vedação eficiente e acabamento de alto padrão.</h1>
+        <p class="lead">
+          A <strong>CSJ Metais</strong> une resistência do corpo metálico, montagem bem ajustada e design premium.
+          Produtos prontos para instalar, com performance no uso diário e visual que valoriza o ambiente.
+        </p>
+
+        <div class="btns">
+          <a class="btn btn--primary" target="_blank"
+             href="https://wa.me/5511993923925?text=Ol%C3%A1!%20Vim%20pelo%20site%20da%20CSJ%20Metais%20e%20quero%20conhecer%20o%20cat%C3%A1logo.">
+            WhatsApp • Catálogo
+          </a>
+          <a class="btn btn--ghost" href="#produtos">Ver categorias</a>
+        </div>
+
+        <div class="badges" aria-label="Pontos fortes">
+          <div class="badge">✔ Acabamento cromado premium</div>
+          <div class="badge">✔ Vedação eficiente</div>
+          <div class="badge">✔ Prontas para instalação</div>
+          <div class="badge">✔ Padrão CSJ de qualidade</div>
+        </div>
+      </div>
+
+      <div class="card" aria-label="Destaque CSJ">
+        <div class="card__head">
+          <div class="chips">
+            <span class="chip chip--gold">Linha CSJ • Premium</span>
+            <span class="chip">Azul técnico + dourado</span>
+          </div>
+          <span class="chip">Ferraz • SP</span>
+        </div>
+
+        <div class="card__body">
+          <div class="heroVisual">
+            <div class="heroVisual__inner">
+              <h3>Identidade CSJ Metais</h3>
+              <p>
+                Este site já está no padrão CSJ.  
+                Quando você colocar as fotos reais dos produtos, fica pronto para vender e fechar no WhatsApp.
+              </p>
+              <div class="heroVisual__sig">
+                <span class="spark"></span>
+                <span><strong>CSJ Metais</strong> • Qualidade que flui</span>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="card__foot">
+          <span>Atendimento via WhatsApp</span>
+          <a href="#contato" style="font-weight:800;color:var(--text)">Solicitar orçamento →</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="produtos" class="section">
+    <div class="container">
+      <div class="section__head">
+        <h2>Produtos CSJ</h2>
+        <p>Categorias do seu catálogo (com quantidades). Tudo alinhado para vitrine e conversão.</p>
+      </div>
+
+      <div class="grid grid--cards">
+        <article class="pcard">
+          <h3>Torneiras de uso geral</h3>
+          <p>Modelos versáteis para aplicações diversas.</p>
+          <div class="meta"><span class="count">17</span><span>itens</span></div>
+        </article>
+
+        <article class="pcard">
+          <h3>Torneiras com filtros</h3>
+          <p>Praticidade com água filtrada no dia a dia.</p>
+          <div class="meta"><span class="count">6</span><span>itens</span></div>
+        </article>
+
+        <article class="pcard">
+          <h3>Torneiras para cozinha</h3>
+          <p>Funcionalidade e ótimo alcance para rotina.</p>
+          <div class="meta"><span class="count">6</span><span>itens</span></div>
+        </article>
+
+        <article class="pcard">
+          <h3>Torneiras gourmet</h3>
+          <p>Design premium com presença na bancada.</p>
+          <div class="meta"><span class="count">4</span><span>itens</span></div>
+        </article>
+
+        <article class="pcard">
+          <h3>Torneiras luxo</h3>
+          <p>Acabamento superior e visual sofisticado.</p>
+          <div class="meta"><span class="count">7</span><span>itens</span></div>
+        </article>
+
+        <article class="pcard">
+          <h3>Torneiras para lavatório</h3>
+          <p>Vedação eficiente e durabilidade no uso diário.</p>
+          <div class="meta"><span class="count">17</span><span>itens</span></div>
+        </article>
+
+        <article class="pcard">
+          <h3>Misturador cozinha</h3>
+          <p>Controle de temperatura com performance e robustez.</p>
+          <div class="meta"><span class="count">6</span><span>itens</span></div>
+        </article>
+
+        <article class="pcard">
+          <h3>Duchas higiênicas</h3>
+          <p>Compactas e confiáveis para instalação prática.</p>
+          <div class="meta"><span class="count">2</span><span>itens</span></div>
+        </article>
+
+        <article class="pcard">
+          <h3>Registros</h3>
+          <p>Controle de fluxo com componentes confiáveis.</p>
+          <div class="meta"><span class="count">10</span><span>itens</span></div>
+        </article>
+
+        <article class="pcard">
+          <h3>Cabeçotes</h3>
+          <p>Mecanismos para manutenção e reposição.</p>
+          <div class="meta"><span class="count">4</span><span>itens</span></div>
+        </article>
+
+        <article class="pcard">
+          <h3>Reparos</h3>
+          <p>Peças para ajustes e prolongamento da vida útil.</p>
+          <div class="meta"><span class="count">11</span><span>itens</span></div>
+        </article>
+
+        <article class="pcard">
+          <h3>Válvulas</h3>
+          <p>Componentes essenciais para vedação e desempenho.</p>
+          <div class="meta"><span class="count">7</span><span>itens</span></div>
+        </article>
+
+        <article class="pcard">
+          <h3>Acessórios</h3>
+          <p>Complementos para instalação e acabamento.</p>
+          <div class="meta"><span class="count">5</span><span>itens</span></div>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <section id="diferenciais" class="section section--alt">
+    <div class="container">
+      <div class="section__head">
+        <h2>Diferenciais CSJ</h2>
+        <p>Posicionamento premium com padrão de qualidade, montagem e acabamento.</p>
+      </div>
+
+      <div class="grid grid--features">
+        <div class="feature">
+          <h3>Corpo metálico resistente</h3>
+          <p>Estrutura robusta para suportar uso contínuo e manter confiabilidade.</p>
+        </div>
+        <div class="feature">
+          <h3>Acabamento cromado premium</h3>
+          <p>Visual elegante com alto brilho e excelente presença no ambiente.</p>
+        </div>
+        <div class="feature">
+          <h3>Vedação eficiente</h3>
+          <p>Montagem ajustada para reduzir vazamentos e melhorar a experiência do cliente.</p>
+        </div>
+        <div class="feature">
+          <h3>Pronto para instalar</h3>
+          <p>Produtos pensados para facilitar instalação e reduzir retrabalho.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="catalogo" class="section">
+    <div class="container">
+      <div class="cta">
+        <div>
+          <h2 style="margin:0 0 8px;letter-spacing:-.35px">Receba o catálogo completo da CSJ Metais</h2>
+          <p style="margin:0;color:var(--muted)">
+            Fale conosco no WhatsApp e solicite o PDF com todas as linhas e variações.
+          </p>
+
+          <div class="btns" style="margin-top:14px">
+            <a class="btn btn--primary" target="_blank"
+               href="https://wa.me/5511993923925?text=Ol%C3%A1!%20Quero%20receber%20o%20cat%C3%A1logo%20PDF%20completo%20da%20CSJ%20Metais.">
+              Pedir catálogo no WhatsApp
+            </a>
+            <button class="btn btn--ghost" id="copyPhone" type="button">Copiar telefone</button>
+          </div>
+
+          <p class="small">WhatsApp: <strong>(11) 99392-3925</strong></p>
+          <p class="small" style="margin-top:6px">Cidade: <strong>Ferraz de Vasconcelos, SP</strong></p>
+        </div>
+
+        <div class="cta__box">
+          <h3 style="margin:0 0 8px">Atendimento</h3>
+          <ul>
+            <li>Resposta rápida no WhatsApp</li>
+            <li>Orçamentos e dúvidas</li>
+            <li>Envio de catálogo em PDF</li>
+          </ul>
+          <div style="margin-top:12px;color:var(--muted);font-size:13px">
+            <strong style="color:var(--text)">CSJ Metais</strong><br>
+            Qualidade que flui
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="sobre" class="section section--alt">
+    <div class="container">
+      <div class="about">
+        <div>
+          <h2 style="margin:0 0 10px">Sobre a CSJ Metais</h2>
+          <p style="margin:0 0 12px">
+            A <strong>CSJ Metais</strong> é dedicada à fabricação e montagem de metais sanitários que unem resistência,
+            funcionalidade e acabamento premium. Nossa prioridade é entregar produtos confiáveis, com vedação eficiente
+            e excelente desempenho no uso diário.
+          </p>
+          <p style="margin:0">
+            Trabalhamos com padronização, atenção aos detalhes e foco total na qualidade — porque, para a CSJ,
+            <strong>qualidade não é promessa: é padrão</strong>.
+          </p>
+        </div>
+
+        <div class="miniGrid">
+          <div class="mini">
+            <span class="kpi">+60</span>
+            <span class="label">Modelos e variações no catálogo</span>
+          </div>
+          <div class="mini">
+            <span class="kpi">100%</span>
+            <span class="label">Foco em qualidade e revisão</span>
+          </div>
+          <div class="mini">
+            <span class="kpi">CSJ</span>
+            <span class="label">Qualidade que flui</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="contato" class="section">
+    <div class="container">
+      <div class="section__head">
+        <h2>Contato</h2>
+        <p>Peça catálogo, valores e disponibilidade. Atendimento pelo WhatsApp.</p>
+      </div>
+
+      <div class="contact">
+        <div class="box">
+          <h3 style="margin:0 0 8px">WhatsApp CSJ Metais</h3>
+          <p style="margin:0 0 14px;color:var(--muted)">
+            Atendimento rápido para pedidos, catálogo e orçamento.
+          </p>
+          <a class="btn btn--primary" target="_blank"
+             href="https://wa.me/5511993923925?text=Ol%C3%A1!%20Vim%20pelo%20site%20da%20CSJ%20Metais%20e%20quero%20um%20or%C3%A7amento.">
+            Chamar agora
+          </a>
+          <p class="small"><strong>(11) 99392-3925</strong></p>
+        </div>
+
+        <form class="box" id="leadForm">
+          <h3 style="margin:0 0 6px">Enviar mensagem</h3>
+          <p style="margin:0;color:var(--muted);font-size:13px">
+            Ao enviar, o WhatsApp abrirá com sua mensagem pronta.
+          </p>
+
+          <label>
+            Nome
+            <input name="name" type="text" placeholder="Seu nome" required />
+          </label>
+
+          <label>
+            Cidade/UF
+            <input name="city" type="text" placeholder="Ex.: Ferraz de Vasconcelos/SP" />
+          </label>
+
+          <label>
+            Mensagem
+            <textarea name="message" rows="4" placeholder="Quero catálogo / orçamento / tirar dúvidas..."></textarea>
+          </label>
+
+          <button class="btn btn--ghost" type="submit">Enviar pelo WhatsApp</button>
+        </form>
+      </div>
+    </div>
+  </section>
+
+  <footer>
+    <div class="container footer">
+      <div class="brand" style="min-width:auto">
+        <div class="logo" aria-hidden="true">
+          <svg width="38" height="38" viewBox="0 0 38 38" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <defs>
+              <linearGradient id="g2" x1="2" y1="2" x2="36" y2="36" gradientUnits="userSpaceOnUse">
+                <stop stop-color="#2DA7FF"/>
+                <stop offset="0.58" stop-color="#D7B15A"/>
+                <stop offset="1" stop-color="#0E6FB3"/>
+              </linearGradient>
+            </defs>
+            <path d="M19 2.4c9.16 0 16.6 7.44 16.6 16.6S28.16 35.6 19 35.6 2.4 28.16 2.4 19 9.84 2.4 19 2.4Z" stroke="url(#g2)" stroke-width="2.2"/>
+            <path d="M12.2 22.2c1.1 2 3.2 3.2 6 3.2 2.7 0 4.7-.9 5.9-2.4.6-.7.4-1.7-.4-2.1l-1.1-.6c-.6-.3-1.3-.2-1.8.3-.7.7-1.6 1.1-2.8 1.1-1.5 0-2.6-.6-3.2-1.6-.8-1.4-.7-3.7.2-5 .6-.9 1.6-1.4 2.9-1.4 1.1 0 2 .3 2.6.9.5.5 1.2.6 1.8.3l1.2-.6c.8-.4 1-1.5.4-2.1-1.2-1.3-3.1-2-5.7-2-2.7 0-4.8 1.1-6 2.9-1.6 2.3-1.8 6.1 0 8.1Z" fill="#EAF0FF" opacity=".95"/>
+            <path d="M26.6 12.4v10.3c0 .9-.7 1.6-1.6 1.6h-1.2c-.9 0-1.6-.7-1.6-1.6v-5.6c0-.9-.7-1.6-1.6-1.6h-.2c-.9 0-1.6.7-1.6 1.6v.2c0 2.8-1.7 4.8-4.5 4.8-.8 0-1.5-.2-2.1-.5-.8-.4-1-1.4-.5-2.1l.7-1c.4-.6 1.1-.8 1.7-.5.2.1.4.1.6.1 1 0 1.6-.7 1.6-1.9v-.3c0-2.6 1.7-4.4 4.2-4.4h.5c1 0 1.8.2 2.5.6.8.4 1.6-.2 1.6-1.1v-.5c0-.9.7-1.6 1.6-1.6h.7c.9 0 1.6.7 1.6 1.6Z" fill="#D7B15A" opacity=".95"/>
+          </svg>
+        </div>
+        <div class="brand__text">
+          <strong>CSJ Metais</strong>
+          <span>Qualidade que flui</span>
+        </div>
+      </div>
+
+      <div class="footer__links">
+        <a href="#produtos">Produtos</a>
+        <a href="#diferenciais">Diferenciais</a>
+        <a href="#catalogo">Catálogo</a>
+        <a href="#contato">Contato</a>
+      </div>
+
+      <div class="footer__copy">
+        © <span id="year"></span> CSJ Metais. Todos os direitos reservados.
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    // Menu mobile
+    const hamb = document.querySelector(".hamb");
+    const nav = document.querySelector(".nav");
+    if (hamb) {
+      hamb.addEventListener("click", () => {
+        const expanded = hamb.getAttribute("aria-expanded") === "true";
+        hamb.setAttribute("aria-expanded", String(!expanded));
+
+        if (expanded) {
+          nav.style.display = "none";
+          return;
+        }
+
+        nav.style.display = "flex";
+        nav.style.flexDirection = "column";
+        nav.style.gap = "12px";
+        nav.style.position = "absolute";
+        nav.style.right = "4vw";
+        nav.style.top = "64px";
+        nav.style.padding = "14px";
+        nav.style.borderRadius = "14px";
+        nav.style.border = "1px solid rgba(255,255,255,.12)";
+        nav.style.background = "rgba(7,10,16,.96)";
+        nav.style.backdropFilter = "blur(12px)";
+      });
+    }
+
+    // Ano
+    document.getElementById("year").textContent = new Date().getFullYear();
+
+    // Copiar telefone
+    const copyBtn = document.getElementById("copyPhone");
+    if (copyBtn) {
+      copyBtn.addEventListener("click", async () => {
+        try {
+          await navigator.clipboard.writeText("11993923925");
+          copyBtn.textContent = "Copiado!";
+          setTimeout(() => (copyBtn.textContent = "Copiar telefone"), 1200);
+        } catch {
+          alert("Número: (11) 99392-3925");
+        }
+      });
+    }
+
+    // Form -> WhatsApp
+    const form = document.getElementById("leadForm");
+    if (form) {
+      form.addEventListener("submit", (e) => {
+        e.preventDefault();
+        const data = new FormData(form);
+        const name = String(data.get("name") || "").trim();
+        const city = String(data.get("city") || "").trim();
+        const message = String(data.get("message") || "").trim();
+
+        const full =
+          `Olá! Vim pelo site da CSJ Metais.\n` +
+          `Nome: ${name}\n` +
+          (city ? `Cidade/UF: ${city}\n` : "") +
+          (message ? `Mensagem: ${message}\n` : "") +
+          `\nQuero falar sobre catálogo/orçamento.`;
+
+        const url = `https://wa.me/5511993923925?text=${encodeURIComponent(full)}`;
+        window.open(url, "_blank");
+      });
+    }
+  </script>
+</body>
+</html>
+
