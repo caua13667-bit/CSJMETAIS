@@ -9,7 +9,135 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&display=swap" rel="stylesheet">
+/* ===== SECTIONS ===== */
+.section{
+  padding: 72px 0;
+  position: relative;
+}
+.section__title{
+  font-size: 28px;
+  margin: 0 0 10px;
+  letter-spacing: -.3px;
+}
+.section__sub{
+  color: var(--muted);
+  margin: 0 0 22px;
+  line-height: 1.6;
+}
 
+.grid{
+  display: grid;
+  gap: 16px;
+}
+.grid--2{
+  grid-template-columns: 1.2fr .8fr;
+  align-items: center;
+}
+.grid--cards{
+  grid-template-columns: repeat(4, 1fr);
+}
+@media (max-width: 980px){
+  .grid--2{ grid-template-columns: 1fr; }
+  .grid--cards{ grid-template-columns: repeat(2, 1fr); }
+}
+@media (max-width: 520px){
+  .grid--cards{ grid-template-columns: 1fr; }
+}
+
+.card{
+  background: var(--card);
+  border: 1px solid rgba(255,255,255,.08);
+  border-radius: var(--radius);
+  overflow: hidden;
+  box-shadow: var(--shadow);
+}
+
+.prod-card{
+  display:flex;
+  flex-direction:column;
+  min-height: 260px;
+}
+.prod-card__img{
+  height: 150px;
+  background-size: cover;
+  background-position: center;
+  filter: saturate(1.05) contrast(1.02);
+}
+.prod-card__body{
+  padding: 14px 14px 16px;
+}
+.prod-card__title{
+  font-weight: 800;
+  margin: 0 0 6px;
+}
+.prod-card__desc{
+  margin: 0;
+  color: var(--muted);
+  font-size: 13.5px;
+  line-height: 1.55;
+}
+
+.badge{
+  display:inline-flex;
+  align-items:center;
+  gap:8px;
+  padding: 8px 12px;
+  border-radius: 999px;
+  background: rgba(255,255,255,.06);
+  border: 1px solid rgba(255,255,255,.10);
+  color: rgba(234,240,255,.92);
+  font-size: 12.5px;
+}
+
+.about-img{
+  min-height: 320px;
+  border-radius: var(--radius);
+  border: 1px solid rgba(255,255,255,.10);
+  background-size: cover;
+  background-position: center;
+  box-shadow: var(--shadow);
+}
+
+.cta-box{
+  padding: 18px;
+  border-radius: var(--radius);
+  border: 1px solid rgba(255,255,255,.10);
+  background: linear-gradient(135deg, rgba(45,167,255,.12), rgba(215,177,90,.10));
+}
+.cta-box p{
+  margin: 8px 0 14px;
+  color: var(--muted);
+}
+
+.btn{
+  display:inline-flex;
+  align-items:center;
+  justify-content:center;
+  gap:10px;
+  padding: 12px 16px;
+  border-radius: 14px;
+  font-weight: 800;
+  border: 1px solid rgba(255,255,255,.12);
+  cursor: pointer;
+}
+.btn--primary{
+  background: linear-gradient(135deg, rgba(45,167,255,1), rgba(45,167,255,.75));
+  color:#06101a;
+  box-shadow: 0 16px 40px rgba(45,167,255,.25);
+}
+.btn--ghost{
+  background: rgba(255,255,255,.06);
+  color: rgba(234,240,255,.92);
+}
+.small{
+  font-size: 12.5px;
+  color: var(--muted);
+}
+.hr{
+  height:1px;
+  background: rgba(255,255,255,.10);
+  margin: 22px 0;
+}
   <style>
     :root{
       --bg:#070A10;
@@ -56,7 +184,115 @@
     url("banner-csj-metais.jpg");
   background-size: cover;
   background-position: center;
-}
+}<!-- ===================== PRODUTOS ===================== -->
+<section id="produtos" class="section">
+  <div class="container">
+    <h2 class="section__title">Produtos CSJ Metais</h2>
+    <p class="section__sub">Linha completa em metais sanitários com foco em durabilidade, vedação eficiente e acabamento premium.</p>
+
+    <div class="grid grid--cards">
+      <article class="card prod-card">
+        <div class="prod-card__img" style='background-image:url("produto-torneira-1.jpg")'></div>
+        <div class="prod-card__body">
+          <h3 class="prod-card__title">Torneiras</h3>
+          <p class="prod-card__desc">Modelos para uso geral, lavatório e cozinha — desempenho no dia a dia e visual premium.</p>
+        </div>
+      </article>
+
+      <article class="card prod-card">
+        <div class="prod-card__img" style='background-image:url("produto-misturador.jpg")'></div>
+        <div class="prod-card__body">
+          <h3 class="prod-card__title">Misturadores</h3>
+          <p class="prod-card__desc">Controle preciso e alta durabilidade — acabamento pensado para ambientes modernos.</p>
+        </div>
+      </article>
+
+      <article class="card prod-card">
+        <div class="prod-card__img" style='background-image:url("produto-registro.jpg")'></div>
+        <div class="prod-card__body">
+          <h3 class="prod-card__title">Registros</h3>
+          <p class="prod-card__desc">Compatibilidade com reposição padrão de mercado e manutenção facilitada.</p>
+        </div>
+      </article>
+
+      <article class="card prod-card">
+        <div class="prod-card__img" style='background-image:url("produto-ducha.jpg")'></div>
+        <div class="prod-card__body">
+          <h3 class="prod-card__title">Duchas higiênicas</h3>
+          <p class="prod-card__desc">Soluções práticas para o uso diário, com montagem ajustada e vedação segura.</p>
+        </div>
+      </article>
+    </div>
+
+    <div class="hr"></div>
+
+    <div class="cta-box">
+      <span class="badge">📲 Atendimento rápido no WhatsApp</span>
+      <p>Quer o catálogo completo e valores? Clique e fale direto com a CSJ Metais.</p>
+      <a class="btn btn--primary" href="https://wa.me/5511993923925?text=Olá%20CSJ%20Metais!%20Quero%20o%20catálogo%20e%20valores." target="_blank" rel="noopener">
+        WhatsApp • Catálogo
+      </a>
+      <a class="btn btn--ghost" href="#catalogo">Ver catálogo no site</a>
+    </div>
+  </div>
+</section>
+
+<!-- ===================== SOBRE ===================== -->
+<section id="sobre" class="section">
+  <div class="container grid grid--2">
+    <div>
+      <h2 class="section__title">Sobre a CSJ Metais</h2>
+      <p class="section__sub">
+        A CSJ Metais desenvolve metais sanitários com foco em qualidade, desempenho e durabilidade.
+        Cada produto é projetado para o uso diário, unindo funcionalidade, acabamento preciso e confiabilidade.
+      </p>
+      <p class="section__sub">
+        Trabalhamos com processos de montagem controlados e padrão técnico rigoroso, garantindo produtos prontos para instalação,
+        com corpo metálico resistente e mecanismos de alta precisão.
+      </p>
+      <p class="small">📍 Ferraz de Vasconcelos, SP</p>
+    </div>
+
+    <div class="about-img" style='background-image:url("sobre-csj-metais.jpg")'></div>
+  </div>
+</section>
+
+<!-- ===================== CATÁLOGO ===================== -->
+<section id="catalogo" class="section">
+  <div class="container">
+    <h2 class="section__title">Catálogo</h2>
+    <p class="section__sub">Baixe o catálogo completo ou solicite diretamente no WhatsApp.</p>
+
+    <div class="grid" style="gap:12px;">
+      <a class="btn btn--primary" href="https://wa.me/5511993923925?text=Olá%20CSJ%20Metais!%20Pode%20me%20enviar%20o%20catálogo%20completo%20em%20PDF%3F" target="_blank" rel="noopener">
+        Receber catálogo no WhatsApp
+      </a>
+
+      <!-- Se você tiver um PDF no GitHub, troque o href para o nome do arquivo (ex: catalogo-csj.pdf) -->
+      <a class="btn btn--ghost" href="#" onclick="alert('Quando você enviar o PDF aqui no GitHub, eu ligo esse botão para download.'); return false;">
+        Baixar catálogo (PDF)
+      </a>
+    </div>
+  </div>
+</section>
+
+<!-- ===================== CONTATO ===================== -->
+<section id="contato" class="section">
+  <div class="container">
+    <h2 class="section__title">Contato</h2>
+    <p class="section__sub">Fale com a CSJ Metais e solicite catálogo, disponibilidade e suporte.</p>
+
+    <div class="grid" style="gap:12px;">
+      <a class="btn btn--primary" href="https://wa.me/5511993923925?text=Olá%20CSJ%20Metais!%20Quero%20atendimento." target="_blank" rel="noopener">
+        WhatsApp: (11) 99392-3925
+      </a>
+      <p class="small">Atendimento: Ferraz de Vasconcelos, SP</p>
+    </div>
+
+    <div class="hr"></div>
+    <div class="about-img" style='min-height:260px;background-image:url("institucional-final.jpg")'></div>
+  </div>
+</section>
 }
     /* Topbar */
     .topbar{
